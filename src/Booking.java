@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Booking {
-    private List<Guest> guests = new ArrayList<>();
+    private List<Guest> guests;
     private Room room;
     private LocalDate checkIn;
     private LocalDate checkOut;
@@ -55,5 +55,16 @@ public class Booking {
 
     public void setTypeOfVacation(TypeOfVacation typeOfVacation) {
         this.typeOfVacation = typeOfVacation;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "guests=" + guests +
+                ", room=" + room +
+                ", checkIn=" + checkIn +
+                ", checkOut=" + checkOut +
+                ", typeOfVacation=" + typeOfVacation +
+                '}';
     }
 }

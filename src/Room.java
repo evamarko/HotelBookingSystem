@@ -54,4 +54,15 @@ public class Room {
     public void setPricePerNight(BigDecimal pricePerNight) {
         this.pricePerNight = pricePerNight;
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomNumber=" + roomNumber +
+                ", numOfBeds=" + numOfBeds +
+                ", hasBalcony=" + hasBalcony +
+                ", hasSeaView=" + hasSeaView +
+                ", pricePerNight=" + pricePerNight +
+                '}';
+    }
 }

@@ -22,8 +22,9 @@ public class Main {
         System.out.println(firstBooking);
         System.out.println(secondBooking);
 
+        Booking thirdBooking = new Booking(List.of(secondGuest), roomOne);
+        System.out.println(thirdBooking);
 
-
-
+        System.out.println(firstGuest.getDescription());
     }
 }

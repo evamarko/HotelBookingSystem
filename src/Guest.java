@@ -39,4 +39,8 @@ public class Guest {
     public String toString() {
         return name + " " + surname + " ("+birthDate+")";
     }
+
+    public String getDescription() {
+        return this.name + " " + this.surname + " " + this.birthDate;
+    }
 }

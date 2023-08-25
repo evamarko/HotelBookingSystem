@@ -17,6 +17,14 @@ public class Booking {
         this.typeOfVacation = typeOfVacation;
     }
 
+    public Booking(List<Guest> guests, Room room) {
+        this.guests = guests;
+        this.room = room;
+        this.checkIn = LocalDate.now();
+        this.checkOut = LocalDate.now().plusDays(6);
+        this.typeOfVacation = TypeOfVacation.LEISURE;
+    }
+
     public List<Guest> getGuests() {
         return new ArrayList<>(guests);
     }

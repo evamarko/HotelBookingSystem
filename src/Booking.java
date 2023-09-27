@@ -1,4 +1,6 @@
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,5 +76,18 @@ public class Booking {
                 ", checkOut=" + checkOut +
                 ", typeOfVacation=" + typeOfVacation +
                 '}';
+    }
+    public int getNumberOfGuests (Booking booking) {
+        return booking.getGuests().size();
+    }
+
+    public long getNumberOfNights(Booking booking) {
+        return ChronoUnit.DAYS.between(checkIn, checkOut);
+    }
+
+    public BigDecimal getTotalBookingPrice (Booking booking) {
+        long daysBetween = getNumberOfNights(booking);
+        BigDecimal price = booking.getRoom().getPricePerNight();
+        return price.multiply(BigDecimal.valueOf(daysBetween));
     }
 }

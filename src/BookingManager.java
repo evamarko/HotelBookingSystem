@@ -56,7 +56,7 @@ public class BookingManager {
             numOfLeisureBookings++;
             if (numOfLeisureBookings >= 8) {
                 break;
-            }
+                }
             }
         }
     }

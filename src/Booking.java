@@ -77,17 +77,18 @@ public class Booking {
                 ", typeOfVacation=" + typeOfVacation +
                 '}';
     }
-    public int getNumberOfGuests (Booking booking) {
-        return booking.getGuests().size();
+
+    public int getNumberOfGuests () {
+        return guests.size();
     }
 
-    public long getNumberOfNights(Booking booking) {
+    public long getNumberOfNights() {
         return ChronoUnit.DAYS.between(checkIn, checkOut);
     }
 
-    public BigDecimal getTotalBookingPrice (Booking booking) {
-        long daysBetween = getNumberOfNights(booking);
-        BigDecimal price = booking.getRoom().getPricePerNight();
+    public BigDecimal getTotalBookingPrice () {
+        long daysBetween = getNumberOfNights();
+        BigDecimal price = room.getPricePerNight();
         return price.multiply(BigDecimal.valueOf(daysBetween));
     }
 }
